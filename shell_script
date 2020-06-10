@@ -1,0 +1,18 @@
+#!/bin/bash
+#shell_script quiz1 Ali Belaj
+
+#loop through txt files
+for filename in *.txt; do mv $filename new_$filename; done
+#loop through bak files
+for filename in *.bak; do rm -f $filename; done
+#loop through python files
+for filename in *.py
+do
+c=`cat $filename|wc -l`
+if test $c -ge 10
+then
+mv "$filename" "long_${filename}"
+else
+mv "$filename" "short_${filename}"
+fi
+done
