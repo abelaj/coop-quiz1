@@ -1,0 +1,12 @@
+#!/bin/bash
+#shell_script quiz1 Ali Belaj
+
+for filename in *.txt; do mv $filename new_$filename; done
+for filename in *.bak; do rm -f $filename; done
+for filename in *.py; do lines=cat $filename | wc -n
+    if [$lines -ge 10]; then
+      mv $filename long_$filename
+    else
+      mv $filename short_$file
+done
+
